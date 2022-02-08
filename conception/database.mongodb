@@ -1,0 +1,67 @@
+use("tangermed")
+db.createCollection("arrivals",{
+    validator:{
+        $jsonSchema:{
+            bsonType:"object",
+            required:["Date","Boat_Id"],
+            properties:{
+                Date:{
+                    bsonType:"date",
+                    description:"must be a date and is required"
+                },
+                Boat_Id:{
+                    bsonType:"objectId",
+                    description:"must be an objectId and is required"
+                }
+            }
+        }
+    }
+})
+
+use("tangermed")
+db.createCollection("boats",{
+    validator:{
+        $jsonSchema:{
+            bsonType:"object",
+            required:["Name","Origin","Qt_Container"],
+            properties:{
+                Name:{
+                    bsonType:"string",
+                    description:"must be a string and is required"
+                },
+                Origin:{
+                    bsonType:"string",
+                    description:"must be an string and is required"
+                },
+                Qt_Container:{
+                  bsonType:"int",
+                    description:"must be an int and is required"
+                }
+            }
+        }
+    }
+})
+
+use('tangermed')
+db.arrivals.aggregate(
+    [
+        {
+            $lookup: {
+              from: 'boats',
+              localField: 'Boat_Id',
+              foreignField: '_id',
+              as: 'boat'
+            }
+        },
+        {   $unwind:"$boat" },
+        {   
+            $project:{
+                _id : 1,
+                Date : 1,
+                Name : "$boat.Name",
+                Origin:"$boat.Origin",
+                Qt_Container:"$boat.Qt_Container",
+            } 
+        }
+    ]
+)
