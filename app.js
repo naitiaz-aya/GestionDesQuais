@@ -8,8 +8,8 @@ const cors = require('cors');
 
 
 const userRoutes = require('./routes/userRoutes');
-const zoneRoutes = require('./routes/zoneRoutes');
-const boatRoutes = require('./routes/boatRoutes');
+const zoneRoutes = require('./routes/blockRoutes');
+const shipRoutes = require('./routes/shipRoutes');
 const arrivalRoutes = require('./routes/arrivalRoutes');
 const companyRoutes = require('./routes/companyRoutes');
 const driverRoutes = require('./routes/driverRoutes');
@@ -54,7 +54,7 @@ app.use(hpp());
 // Routes
 app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/zone', zoneRoutes);
-app.use('/api/v1/boat', boatRoutes);
+app.use('/api/v1/ship', shipRoutes);
 app.use('/api/v1/arrival', arrivalRoutes);
 app.use('/api/v1/company', companyRoutes);
 app.use('/api/v1/driver', driverRoutes);

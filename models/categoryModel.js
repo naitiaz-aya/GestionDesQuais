@@ -1,13 +1,13 @@
 const mongoose = require("mongoose")
 
 const categorySchema = new mongoose.Schema({
-  Name:{
+  name:{
     type: String,
-    required: [true, "Please fill Name "]
+    required: [true, "Please fill name "]
   },
-  IsDangerous:{
+  isDangerous:{
     type: Boolean,
-    required: [true, "Please fill Boat"]
+    required: [true, "Please fill isDangerous"]
   }
 })
 

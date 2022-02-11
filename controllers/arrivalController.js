@@ -1,10 +1,10 @@
-const Arrival = require("../models/arrivalModel")
+const Arrival = require("../models/reservationModel")
 const base = require("./baseController")
 
 
 exports.createArrival = base.createOne(Arrival)
 exports.getAllArrival = async (req, res, next) => {
-  try {  
+  try {
     const doc = await Arrival.find().populate({
         path:"Boat_Id",
         model:"boat"
@@ -15,7 +15,7 @@ exports.getAllArrival = async (req, res, next) => {
       results: doc.length,
       data: {
         doc
-      },
+      }
     })
   } catch (error) {
     next(error)

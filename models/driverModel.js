@@ -1,13 +1,17 @@
 const mongoose = require("mongoose")
 
 const driverSchema = new mongoose.Schema({
-  Name:{
+  name:{
     type: String,
-    required: [true, "Please fill Name "]
+    required: [true, "Please fill name "]
   },
-  Tel:{
+  tel:{
     type: String,
-    required: [true, "Please fill Tel "]
+    required: [true, "Please fill tel "]
+  },
+  truckId:{
+    type: mongoose.Schema.Types.ObjectId,
+    required: [true, "Please fill truckId"]
   },
 })
 

@@ -1,37 +1,50 @@
 const mongoose = require("mongoose")
 
 const containerSchema = new mongoose.Schema({
-  Ref:{
+  ref:{
     type: String,
-    required: [true, "Please fill Ref "]
+    required: [true, "Please fill ref "]
   },
-  Type:{
+  brand:{
     type: String,
-    required: [true, "Please fill Type "]
+    required: [true, "Please fill brand "]
   },
-  Weight:{
+  dimension:{
+    type: String,
+    required: [true, "Please fill dimension "]
+  },
+  weight:{
     type: Number,
-    required: [true, "Please fill Weight "]
+    required: [true, "Please fill weight "]
+  },
+  serviceDate:{
+    type: Date,
+    required: [true, "Please fill serviceDate "]
   },
   Status:{
     type: String,
-    required: [true, "Please fill Status "]
+    required: [true, "Please fill Status "],
+    enum:["valid","invalid"]
   },
-  Client_Id:{
+  userId:{
     type: mongoose.Schema.Types.ObjectId,
-    required: [true, "Please fill Client"]
+    required: [true, "Please fill userId"]
   },
-  Sender_Id:{
+  truckId:{
     type: mongoose.Schema.Types.ObjectId,
-    required: [true, "Please fill Sender"]
+    required: [true, "Please fill truckId"]
   },
-  Category_Id:{
+  categoryId:{
     type: mongoose.Schema.Types.ObjectId,
-    required: [true, "Please fill Category"]
+    required: [true, "Please fill categoryId"]
   },
-  Zone_Id:{
+  customFees:{
+    type: Boolean,
+    required: [true, "Please fill customFeesId"]
+  },
+  blockPartId:{
     type: mongoose.Schema.Types.ObjectId,
-    required: [true, "Please fill Zone"]
+    required: [true, "Please fill blockPartId"]
   }
 })
 

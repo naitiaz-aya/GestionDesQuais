@@ -18,6 +18,14 @@ const userSchema = new mongoose.Schema({
     type: String,
     trim: true,
   },
+  nationality: {
+    type: String,
+    trim: true,
+  },
+  organisation: {
+    type: String,
+    trim: true,
+  },
   password: {
     type: String,
     required: [true, "Please fill your password"],
@@ -37,8 +45,8 @@ const userSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ["admin", "user"],
-    default: "user",
+    enum: ["admin","fournisseur","prestataire", "drPort", "drQuais", "superAdmin", "containerOwner"],
+    default: "admin",
   },
 });
 

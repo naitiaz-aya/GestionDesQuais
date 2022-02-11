@@ -1,14 +1,15 @@
 const mongoose = require("mongoose")
 
 const truckSchema = new mongoose.Schema({
-  Name:{
+  matricule:{
     type: String,
-    required: [true, "Please fill Name "]
+    required: [true, "Please fill matricule "]
   },
-  Driver_Id:{
-    type: mongoose.Schema.Types.ObjectId,
-    required: [true, "Please fill Driver"]
-  }
+  status:{
+    type: String,
+    required: [true, "Please fill status "], 
+    enum: ["Inern","Extern"]
+  },
 })
 
 const Truck = mongoose.model("truck", truckSchema)
