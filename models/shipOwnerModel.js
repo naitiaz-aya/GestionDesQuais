@@ -7,19 +7,15 @@ const shipOwnerSchema = new mongoose.Schema({
   },
   email:{
     type: String,
-    required: [true, "Please fill email "]
+    required: [true, "Please fill email"]
   },
   tel:{
     type: String,
-    required: [true, "Please fill tel "]
-  },
-  description:{
-    type: String,
-    required: [true, "Please fill description "]
+    required: [true, "Please fill tel"]
   },
   nationality:{
     type: String,
-    required: [true, "Please fill nationality "]
+    required: [true, "Please fill nationality"]
   },
 })
 

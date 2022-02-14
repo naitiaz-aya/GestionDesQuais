@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const driverSchema = new mongoose.Schema({
+const systemSchema = new mongoose.Schema({
   name:{
     type: String,
     required: [true, "Please fill name "]
@@ -28,5 +28,5 @@ const driverSchema = new mongoose.Schema({
   
 })
 
-const Driver = mongoose.model("driver", driverSchema)
-module.exports = Driver
+const System = mongoose.model("system", systemSchema)
+module.exports = System

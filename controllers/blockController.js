@@ -2,7 +2,7 @@ const Block = require("../models/blockModel")
 const base = require("./baseController")
 
 exports.createBlock = base.createOne(Block);
-exports.getAllBlock =  async (req, res, next) => {
+exports.getAllBlock =  async (req, res) => {
   try {
     const doc = await Block.find().populate({
         path:"partId",
@@ -17,6 +17,8 @@ exports.getAllBlock =  async (req, res, next) => {
       }
     })
   } catch (error) {
-    next(error)
+    res.status(400).json({
+      message:error
+    })
   }
 }

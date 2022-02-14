@@ -15,6 +15,7 @@ const shipSchema = new mongoose.Schema({
   },
   type:{
     type: String,
+    enum: ["Panamax","Suezmax","Malaccamax"],
     required: [true, "Please fill type"]
   },
   shipOwner:{

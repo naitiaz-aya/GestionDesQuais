@@ -6,15 +6,15 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cors = require('cors');
 
-
 const userRoutes = require('./routes/userRoutes');
-const zoneRoutes = require('./routes/blockRoutes');
+const portRoutes = require('./routes/portRoutes');
+const systemRoutes = require('./routes/systemRoutes');
+const quayTypeRoutes = require('./routes/quayTypeRoutes');
 const shipRoutes = require('./routes/shipRoutes');
+const shipOwnerRoutes = require('./routes/shipOwnerRoutes');
 const arrivalRoutes = require('./routes/arrivalRoutes');
-const companyRoutes = require('./routes/companyRoutes');
-const driverRoutes = require('./routes/driverRoutes');
+// const driverRoutes = require('./routes/driverRoutes');
 const categoryRoutes = require('./routes/categoryRoutes');
-
 
 const globalErrHandler = require('./controllers/errorController');
 const AppError = require('./utils/appError');
@@ -53,11 +53,13 @@ app.use(hpp());
 
 // Routes
 app.use('/api/v1/users', userRoutes);
-app.use('/api/v1/zone', zoneRoutes);
+app.use('/api/v1/system', systemRoutes);
+app.use('/api/v1/port', portRoutes);
+app.use('/api/v1/quayType', quayTypeRoutes);
 app.use('/api/v1/ship', shipRoutes);
-app.use('/api/v1/arrival', arrivalRoutes);
-app.use('/api/v1/company', companyRoutes);
-app.use('/api/v1/driver', driverRoutes);
+app.use('/api/v1/shipOwner', shipOwnerRoutes);
+app.use('/api/v1/arrival', arrivalRoutes);  
+// app.use('/api/v1/driver', driverRoutes);
 app.use('/api/v1/category', categoryRoutes);
 
 // handle undefined Routes

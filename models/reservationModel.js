@@ -9,6 +9,10 @@ const reservationSchema = new mongoose.Schema({
     type: Number,
     required: [true, "Please fill NumberOfContainer "]
   },
+  truckId:{
+    type: mongoose.Schema.Types.ObjectId,
+    required: [true, "Please fill truckId"]
+  },
   userId:{
     type: mongoose.Schema.Types.ObjectId,
     required: [true, "Please fill userId"]

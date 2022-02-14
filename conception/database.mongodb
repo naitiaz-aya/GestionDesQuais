@@ -1,5 +1,5 @@
 use("tangermed")
-db.createCollection("arrivals",{
+db.createCollection("",{
     validator:{
         $jsonSchema:{
             bsonType:"object",
@@ -19,7 +19,7 @@ db.createCollection("arrivals",{
 })
 
 use("tangermed")
-db.createCollection("boats",{
+db.createCollection("ships",{
     validator:{
         $jsonSchema:{
             bsonType:"object",

@@ -5,8 +5,8 @@ exports.createReservation = base.createOne(Reservation);
 exports.getAllReservation = async (req, res, next) => {
   try {
     const doc = await Reservation.find().populate({
-        path:["shipId","quayId"],
-        model:["ship","quay"]
+        path:["shipId","quayId","userId","truckId"],
+        model:["ship","quay","user","truck"]
     })
 
     res.status(200).json({
@@ -16,6 +16,7 @@ exports.getAllReservation = async (req, res, next) => {
         doc
       }
     })
+
   } catch (error) {
     next(error)
   }
