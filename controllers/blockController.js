@@ -6,7 +6,8 @@ exports.getAllBlock =  async (req, res) => {
   try {
     const doc = await Block.find().populate({
         path:"partId",
-        model:"quayPart"
+        model:"blockPart",
+        
     })
 
     res.status(200).json({
@@ -17,8 +18,6 @@ exports.getAllBlock =  async (req, res) => {
       }
     })
   } catch (error) {
-    res.status(400).json({
-      message:error
-    })
+    next(error)
   }
 }

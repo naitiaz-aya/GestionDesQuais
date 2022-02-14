@@ -5,7 +5,7 @@ const truckSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please fill matricule "]
   },
-  status:{
+  status:{ 
     type: String,
     required: [true, "Please fill status "], 
     enum: ["Inern","Extern"]

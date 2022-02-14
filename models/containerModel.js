@@ -21,7 +21,7 @@ const containerSchema = new mongoose.Schema({
     type: Date,
     required: [true, "Please fill serviceDate "]
   },
-  Status:{
+  status:{
     type: String,
     required: [true, "Please fill Status "],
     enum:["valid","invalid"]

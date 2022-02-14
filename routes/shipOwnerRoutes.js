@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const shipOwnerController = require('../controllers/shipOwnerController');
+const shipOwnerController = require('../controllers/shipOwnerModel');
 const authController = require('../controllers/authController');
 
 router.use(authController.protect);

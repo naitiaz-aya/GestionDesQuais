@@ -1,17 +1,13 @@
 const mongoose = require("mongoose")
 
 const reservationSchema = new mongoose.Schema({
-  DateCheckIn:{
+  dateCheckIn:{
     type: Date,
     required: [true, "Please fill Date "]
   },
   numberOfContainer:{
     type: Number,
     required: [true, "Please fill NumberOfContainer "]
-  },
-  truckId:{
-    type: mongoose.Schema.Types.ObjectId,
-    required: [true, "Please fill truckId"]
   },
   userId:{
     type: mongoose.Schema.Types.ObjectId,
