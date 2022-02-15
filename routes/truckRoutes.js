@@ -4,6 +4,7 @@ const truckController = require('../controllers/truckController');
 const authController = require('../controllers/authController');
 
 router.use(authController.protect);
+router.use(authController.restrictTo('admin'));
 router.route('/').post(truckController.createTruck);
 router.route('/getAlltruck').get(truckController.getAllTruck);
 

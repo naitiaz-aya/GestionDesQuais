@@ -41,3 +41,5 @@ exports.getAllReservation = async (req, res, next) => {
     next(error);
   }
 };
+
+exports.deleteReservation = base.deleteOne(Reservation);

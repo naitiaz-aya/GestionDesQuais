@@ -4,6 +4,7 @@ const driverController = require('../controllers/driverController');
 const authController = require('./../controllers/authController');
 
 router.use(authController.protect);
+router.use(authController.restrictTo('admin'));
 router.route('/').post(driverController.createDriver);
 router.route('/getAlldriver').get(driverController.getAllDriver);
 

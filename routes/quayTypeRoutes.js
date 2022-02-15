@@ -4,6 +4,7 @@ const quayTypeController = require('../controllers/quayTypeController');
 const authController = require('../controllers/authController');
 
 router.use(authController.protect);
+router.use(authController.restrictTo('admin'));
 router.route('/').post(quayTypeController.createQuayType);
 router.route('/getAllquayType').get(quayTypeController.getAllQuayType);
 

@@ -4,6 +4,7 @@ const blockPartController = require('../controllers/blockPartController');
 const authController = require('../controllers/authController');
 
 router.use(authController.protect);
+router.use(authController.restrictTo('admin'));
 router.route('/').post(blockPartController.createBlockPart);
 router.route('/getAllblockPart').get(blockPartController.getAllBlockPart);
 
